@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chat</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js" charset="utf-8"></script>
+        <script src="vendors/angular.min.js" charset="utf-8"></script>
+        <script src="scripts/client.js" charset="utf-8"></script>
+
+    </head>
+    <body ng-app='myApp'>
+        <div class="container" ng-controller='ChatController as cc'>
+            <h1>Hello World</h1>
+            <div class="chat-content" ng-model='cc.inputDiv'>
+                <p ng-repeat='message in cc.messagesArray'>{{message.data}}</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12 chat-functunality">
+
+                        <input type="text" placeholder="Name" ng-model='cc.name'>
+                        <input type="text" placeholder="Message" ng-model='cc.message'>
+                        <button type="button" name="button" ng-click='cc.sendMessage()'>Send</button>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
